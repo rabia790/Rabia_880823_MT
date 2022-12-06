@@ -21,7 +21,7 @@ import android.widget.CheckBox;
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener, RadioGroup.OnCheckedChangeListener{
     Spinner spinner;
     EditText dailyRent;
-    double priceSelected, quantity,  calamount;
+    double priceSelected, quantity, calamount;
     RadioButton radioButton1, radioButton2, radioButton3;
     RadioGroup radioGroup;
     EditText totalAmount, totalPay;
@@ -35,12 +35,15 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         spinner = findViewById(R.id.cars);
         spinner.setOnItemSelectedListener(this);
         dailyRent = findViewById(R.id.dailyrent);
-        radioGroup = findViewById(R.id.radioGroup);
+
         radioButton1 = findViewById(R.id.radioButton1);
         radioButton2 = findViewById(R.id.radioButton2);
         radioButton3 = findViewById(R.id.radioButton3);
         totalAmount = findViewById(R.id.amount);
         totalPay = findViewById(R.id.totalPay);
+
+        radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
+        radioGroup.setOnCheckedChangeListener(this);
 
 
         final SeekBar seekBar = findViewById(R.id.seekBar);
@@ -198,28 +201,31 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
     @Override
-    public void onCheckedChanged(RadioGroup radioGroup, int i) {
-        switch (i) {
-            case R.id.radioButton1:
 
-//                finalPInterest = (quantity * priceSelected) + tip + (0.13 * priceSelected);
-//                finalPrice.setText(String.valueOf( finalPInterest));
-                //amount = amount + 5;
-                break;
+        public void onCheckedChanged(RadioGroup radioGroup, int i) {
+            switch (i) {
+                case R.id.radioButton1:
+                    calamount= (quantity * priceSelected);
+                    totalAmount.setText(String.valueOf(calamount+5));
+                    totalPay.setText(String.valueOf((calamount + 5) - (calamount * 0.13)));
+                    break;
+
+                case R.id.radioButton2:
+                    calamount= (quantity * priceSelected);
+                    totalAmount.setText(String.valueOf(calamount));
+                    totalPay.setText(String.valueOf(calamount - calamount*0.13));
+                    break;
+
+                case R.id.radioButton3:
+                    calamount= (quantity * priceSelected);
+                    totalAmount.setText(String.valueOf(calamount-10));
+                    totalPay.setText(String.valueOf(calamount - 10 - (calamount * 0.13)));
+                    break;
 
 
-
-            case R.id.radioButton3:
-
-//                finalPInterest = (quantity * priceSelected) + tip + (0.13 * priceSelected);
-//                finalPrice.setText(String.valueOf( finalPInterest));
-
-               // amount = amount -10;
-                break;
-
-
+            }
         }
-    }
+
 
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
