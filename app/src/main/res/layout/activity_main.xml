@@ -92,5 +92,49 @@
     </RadioGroup>
 
 
+
+    <TextView
+        android:id="@+id/carOptions"
+        android:text="Options"
+        android:layout_marginLeft="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:textStyle="bold|italic"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+        android:layout_marginTop="20dp"/>
+
+    <CheckBox
+        android:id="@+id/idCheckBox1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/radioGroup"
+        android:layout_marginTop="40dp"
+        android:text="GPS"
+        tools:ignore="MissingConstraints" />
+
+    <CheckBox
+        android:id="@+id/idCheckBox2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/radioGroup"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="40dp"
+        app:layout_constraintLeft_toRightOf="@id/idCheckBox1"
+       android:text="Child Seat"
+        tools:ignore="MissingConstraints" />
+
+    <CheckBox
+        android:id="@+id/idCheckBox3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/radioGroup"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="40dp"
+        app:layout_constraintLeft_toRightOf="@id/idCheckBox2"
+        android:text="Unlimited Milage"
+        tools:ignore="MissingConstraints" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
