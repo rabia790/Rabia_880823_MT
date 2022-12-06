@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
                 Intent intent = new Intent(MainActivity.this, ViewDetails.class);
                 intent.putExtra("message", spinner.getSelectedItem().toString());
+                intent.putExtra("amount", totalPay.getText().toString());
                 startActivity(intent);
             }
         });

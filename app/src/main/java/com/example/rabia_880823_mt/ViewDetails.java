@@ -14,9 +14,12 @@ public class ViewDetails extends AppCompatActivity {
         setContentView(R.layout.activity_view_details);
 
         TextView textView = findViewById(R.id.selectedCar);
+        TextView amountTax = findViewById(R.id.amountTax);
 
         Intent intent = getIntent();
         String message = intent.getExtras().getString("message");
         textView.setText(message);
+        String amount = intent.getExtras().getString("amount");
+        amountTax.setText(amount);
     }
 }
