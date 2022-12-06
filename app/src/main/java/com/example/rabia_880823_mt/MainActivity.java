@@ -92,28 +92,42 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
        switch(view.getId()) {
            case R.id.idCheckBox1:
-               if (checked)
-                   calamount= (quantity * priceSelected);
-               totalAmount.setText(String.valueOf(calamount+5));
-               totalPay.setText(String.valueOf((calamount + 5) - (calamount * 0.13)));
+               if (checked) {
+                   calamount = (quantity * priceSelected);
+                   totalAmount.setText(String.valueOf(calamount + 5));
+                   totalPay.setText(String.valueOf((calamount + 5) - (calamount * 0.13)));
+               }
+               else {
 
-
-
+                   calamount = (quantity * priceSelected);
+                   totalAmount.setText(String.valueOf(calamount));
+                   totalPay.setText(String.valueOf((calamount) - (calamount * 0.13)));
+               }
                break;
            case R.id.idCheckBox2:
-               if (checked)
-                   calamount= (quantity * priceSelected);
-               totalAmount.setText(String.valueOf(calamount+7));
-               totalPay.setText(String.valueOf((calamount + 7) - (calamount * 0.13)));
+               if (checked) {
+                   calamount = (quantity * priceSelected);
+                   totalAmount.setText(String.valueOf(calamount + 7));
+                   totalPay.setText(String.valueOf((calamount + 7) - (calamount * 0.13)));
 
-
+               }
+               else{
+                   calamount = (quantity * priceSelected);
+                   totalAmount.setText(String.valueOf(calamount));
+                   totalPay.setText(String.valueOf((calamount) - (calamount * 0.13)));
+               }
                break;
            case R.id.idCheckBox3:
-               if (checked)
-                   calamount= (quantity * priceSelected);
-               totalAmount.setText(String.valueOf(calamount+10));
-               totalPay.setText(String.valueOf((calamount + 10) - (calamount * 0.13)));
-
+               if (checked) {
+                   calamount = (quantity * priceSelected);
+                   totalAmount.setText(String.valueOf(calamount + 10));
+                   totalPay.setText(String.valueOf((calamount + 10) - (calamount * 0.13)));
+               }
+               else{
+                   calamount = (quantity * priceSelected);
+                   totalAmount.setText(String.valueOf(calamount));
+                   totalPay.setText(String.valueOf((calamount) - (calamount * 0.13)));
+               }
 
                break;
 
