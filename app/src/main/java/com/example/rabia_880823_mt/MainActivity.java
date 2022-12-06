@@ -3,6 +3,7 @@ package com.example.rabia_880823_mt;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     EditText totalAmount, totalPay;
     Button viewDetails;
     SeekBar seekBar;
+    String itemSelected;
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -55,8 +57,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             @Override
             public void onClick(View view) {
                 onOrderSuccess();
+
+                Intent intent = new Intent(MainActivity.this, ViewDetails.class);
+                intent.putExtra("message", spinner.getSelectedItem().toString());
+                startActivity(intent);
             }
         });
+
+
 
 
 
@@ -163,6 +171,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         if (spinner.getSelectedItem().toString().equals("BMW")) {
+            itemSelected = spinner.getSelectedItem().toString();
             priceSelected = 8.90;
             dailyRent.setText("8.90");
             calamount= (quantity * priceSelected);
@@ -170,6 +179,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             totalPay.setText(String.valueOf(calamount - calamount*0.13));
 
         }else  if (spinner.getSelectedItem().toString().equals("Audi")) {
+            itemSelected = spinner.getSelectedItem().toString();
             priceSelected = 2.90;
             dailyRent.setText("2.90");
             calamount= (quantity * priceSelected);
@@ -177,6 +187,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             totalPay.setText(String.valueOf(calamount - calamount*0.13));
 
         }else  if (spinner.getSelectedItem().toString().equals("Cadilliac")) {
+            itemSelected = spinner.getSelectedItem().toString();
             priceSelected = 8.10;
             dailyRent.setText("8.10");
             calamount= (quantity * priceSelected);
@@ -184,6 +195,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             totalPay.setText(String.valueOf(calamount - calamount*0.13));
 
         }else  if (spinner.getSelectedItem().toString().equals("WolksWagon")) {
+            itemSelected = spinner.getSelectedItem().toString();
             priceSelected = 9.90;
             dailyRent.setText("9.90");
             calamount= (quantity * priceSelected);
@@ -191,6 +203,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             totalPay.setText(String.valueOf(calamount - calamount*0.13));
 
         }else  if (spinner.getSelectedItem().toString().equals("Mercedes")) {
+            itemSelected = spinner.getSelectedItem().toString();
             priceSelected = 2.90;
             dailyRent.setText("2.90");
             calamount= (quantity * priceSelected);
@@ -198,6 +211,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             totalPay.setText(String.valueOf(calamount - calamount*0.13));
 
         }else  if (spinner.getSelectedItem().toString().equals("Peugot")) {
+            itemSelected = spinner.getSelectedItem().toString();
             priceSelected = 1.90;
             dailyRent.setText("1.90");
             calamount= (quantity * priceSelected);
@@ -205,6 +219,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             totalPay.setText(String.valueOf(calamount - calamount*0.13));
 
         }else  if (spinner.getSelectedItem().toString().equals("Ferrari")) {
+            itemSelected = spinner.getSelectedItem().toString();
             priceSelected = 8.30;
             dailyRent.setText("8.30");
             calamount= (quantity * priceSelected);
@@ -212,6 +227,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             totalPay.setText(String.valueOf(calamount - calamount*0.13));
 
         }else  if (spinner.getSelectedItem().toString().equals("Tarzon")) {
+            itemSelected = spinner.getSelectedItem().toString();
             priceSelected = 2.8;
             dailyRent.setText("2.8");
             calamount= (quantity * priceSelected);
@@ -219,6 +235,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             totalPay.setText(String.valueOf(calamount - calamount*0.13));
 
         }else  if (spinner.getSelectedItem().toString().equals("Car2")) {
+            itemSelected = spinner.getSelectedItem().toString();
             priceSelected = 4.90;
             dailyRent.setText("4.90");
             calamount= (quantity * priceSelected);
@@ -226,6 +243,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             totalPay.setText(String.valueOf(calamount - calamount*0.13));
 
         }else  if (spinner.getSelectedItem().toString().equals("Car10")) {
+            itemSelected = spinner.getSelectedItem().toString();
             priceSelected = 2.50;
             dailyRent.setText("2.50");
             calamount= (quantity * priceSelected);
