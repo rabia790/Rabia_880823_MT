@@ -165,7 +165,15 @@
         app:layout_constraintLeft_toRightOf="@+id/amount"
         app:layout_constraintTop_toBottomOf="@+id/idCheckBox3" />
 
+<Button
+    android:id="@+id/viewDetails"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="View Details"
+    android:layout_marginTop="30dp"
+    android:gravity="center"
 
+    app:layout_constraintTop_toBottomOf="@id/totalPay"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
