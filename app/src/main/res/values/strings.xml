@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">Rabia_880823_MT</string>
+    <string name="car_rent_service">Car Rent Service</string>
+    <string-array name="cars">
+        <item>BMW</item>
+        <item>Audi</item>
+        <item>Cadilliac</item>
+        <item>Wolks Wagon</item>
+        <item>Mercedes</item>
+        <item>Peugot</item>
+        <item>Ferrari</item>
+        <item>Tarzon</item>
+        <item>Car2</item>
+        <item>Car10</item>
+    </string-array>
+
 </resources>
