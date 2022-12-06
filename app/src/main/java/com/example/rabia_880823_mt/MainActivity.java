@@ -7,7 +7,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.SeekBar;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
     Spinner spinner;
@@ -21,11 +23,41 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         spinner.setOnItemSelectedListener(this);
         dailyRent = findViewById(R.id.dailyrent);
 
+        final SeekBar seekBar = findViewById(R.id.seekBar);
+        final TextView textView = findViewById(R.id.seekText);
+
         Spinner spinner = (Spinner) findViewById(R.id.cars);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.cars, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
+
+        seekBar.setMax(10);
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                if (fromUser)
+                    textView.setText(String.valueOf(progress));
+//                quantity = Double.parseDouble(String.valueOf(progress));
+//                finalPInterest = (quantity * priceSelected) + tip + (0.13 * priceSelected);
+//                finalPrice.setText(String.valueOf( finalPInterest));
+
+
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
+
+
     }
 
     @Override
