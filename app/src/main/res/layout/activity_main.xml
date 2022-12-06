@@ -43,6 +43,7 @@
         android:id="@+id/seekBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
         app:layout_constraintTop_toBottomOf="@+id/dailyrent"
         android:layout_marginTop="30dp"/>
     <TextView
@@ -114,6 +115,7 @@
         android:layout_marginTop="40dp"
         android:text="GPS"
         tools:ignore="MissingConstraints"
+        android:onClick="onCheckboxClicked"
        />
 
     <CheckBox
@@ -125,7 +127,8 @@
         android:layout_marginLeft="40dp"
         app:layout_constraintLeft_toRightOf="@id/idCheckBox1"
        android:text="Child Seat"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        android:onClick="onCheckboxClicked"/>
 
     <CheckBox
         android:id="@+id/idCheckBox3"
@@ -136,7 +139,8 @@
         android:layout_marginLeft="40dp"
         app:layout_constraintLeft_toRightOf="@id/idCheckBox2"
         android:text="Unlimited Milage"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        android:onClick="onCheckboxClicked"/>
 
     <EditText
         android:id="@+id/amount"
