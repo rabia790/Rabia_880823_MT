@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -16,6 +17,7 @@ import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.CheckBox;
+import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener, RadioGroup.OnCheckedChangeListener{
@@ -25,6 +27,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     RadioButton radioButton1, radioButton2, radioButton3;
     RadioGroup radioGroup;
     EditText totalAmount, totalPay;
+    Button viewDetails;
+    SeekBar seekBar;
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -41,9 +45,19 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         radioButton3 = findViewById(R.id.radioButton3);
         totalAmount = findViewById(R.id.amount);
         totalPay = findViewById(R.id.totalPay);
+        viewDetails = findViewById(R.id.viewDetails);
+        seekBar = findViewById(R.id.seekBar);
 
         radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
         radioGroup.setOnCheckedChangeListener(this);
+
+        viewDetails.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onOrderSuccess();
+            }
+        });
+
 
 
         final SeekBar seekBar = findViewById(R.id.seekBar);
@@ -86,6 +100,18 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 
     }
+
+    private void onOrderSuccess() {
+
+
+        if (!(radioGroup.getCheckedRadioButtonId() != -1)){
+            Toast.makeText(this, "Please select radioButton!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+
+    }
+
 
    public void onCheckboxClicked(View view) {
         boolean checked = ((CheckBox) view).isChecked();
