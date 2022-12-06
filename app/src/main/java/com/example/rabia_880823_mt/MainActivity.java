@@ -3,9 +3,11 @@ package com.example.rabia_880823_mt;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+
 import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.Spinner;
@@ -14,6 +16,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
     Spinner spinner;
     EditText dailyRent;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +25,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         spinner = findViewById(R.id.cars);
         spinner.setOnItemSelectedListener(this);
         dailyRent = findViewById(R.id.dailyrent);
+
 
         final SeekBar seekBar = findViewById(R.id.seekBar);
         final TextView textView = findViewById(R.id.seekText);
@@ -59,6 +63,25 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 
     }
+
+//    public void onCheckboxClicked(View view) {
+//        // Is the view now checked?
+//        boolean checked = ((CheckBox) view).isChecked();
+//
+//        // Check which checkbox was clicked
+//        switch(view.getId()) {
+//            case R.id.idCheckBox1:
+//
+//                if (checked)
+//                   checkk.setText("ff");
+//            else
+//                    checkk.setText("nn");
+//                break;
+//
+//
+//
+//        }
+//    }
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
